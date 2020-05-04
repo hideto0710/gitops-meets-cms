@@ -47,5 +47,8 @@ collections:
               fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Image", name: "image", widget: "string"}
-              - {label: "Args", name: "args", widget: "list"}
+              - label: "Args"
+                name: "args"
+                widget: "list"
+                field: {label: "Arg", name: "arg", widget: "string"}
               - {label: "RestartPolicy", name: "restartPolicy", widget: "string"}
