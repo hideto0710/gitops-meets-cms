@@ -12,6 +12,7 @@ collections:
   folder: "jobs"
   create: true
   identifier_field: "metadata.name"
+  extension: "yaml"
   fields:
   - {label: "APIVersion", name: "apiVersion", widget: "hidden", default: "batch/v1beta1"}
   - {label: "Kind", name: "kind", widget: "hidden", default: "CronJob"}
