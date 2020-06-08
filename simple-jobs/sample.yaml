@@ -3,5 +3,5 @@ kind: SimpleJob
 metadata:
   name: sample
 spec:
-  schedule: "*/1 * * * *"
+  schedule: "*/2 * * * *"
   name: hideto0710
