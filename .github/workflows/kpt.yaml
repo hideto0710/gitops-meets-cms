@@ -20,6 +20,7 @@ jobs:
         run: |
           git config --global user.name 'hideto0710'
           git config --global user.email 'h.inamura0710@gmail.com'
-          git add --ignore-errors ./cron-jobs/*
+          ls -la ./cron-jobs/
+          git add ./cron-jobs/*
           git commit -m "update cron-jobs"
           git push
