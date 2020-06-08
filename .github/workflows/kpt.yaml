@@ -18,8 +18,8 @@ jobs:
           dest: ./cron-jobs
       - name: Commit CronJobs
         run: |
-          ls ./cron-jobs
           git config --global user.name 'hideto0710'
           git config --global user.email 'h.inamura0710@gmail.com'
-          git commit -am "update cron-jobs"
+          git add ./cron-jobs/*
+          git commit -m "update cron-jobs"
           git push
