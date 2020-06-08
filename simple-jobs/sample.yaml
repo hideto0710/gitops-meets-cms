@@ -4,4 +4,4 @@ metadata:
   name: sample
 spec:
   schedule: "*/1 * * * *"
-  name: hideto0710
+  name: hideto
