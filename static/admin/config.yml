@@ -8,48 +8,49 @@ public_folder: "/images"
 # publish_mode: editorial_workflow
 
 collections:
-- name: "jobs"
-  label: "Jobs"
-  folder: "jobs"
-  create: true
-  identifier_field: "metadata.name"
-  extension: "yaml"
-  fields:
-  - {label: "APIVersion", name: "apiVersion", widget: "hidden", default: "batch/v1beta1"}
-  - {label: "Kind", name: "kind", widget: "hidden", default: "CronJob"}
-  - label: "Metadata"
-    name: "metadata"
-    widget: "object"
+  - name: "jobs"
+    label: "Jobs"
+    folder: "jobs"
+    create: true
+    identifier_field: "metadata.name"
+    extension: "yaml"
     fields:
-    - {label: "Name", name: "name", widget: "string"}
-  - label: "Spec"
-    name: "spec"
-    widget: "object"
-    fields:
-    - {label: "Schedule", name: "schedule", widget: "string"}
-    - label: "JobTemplate"
-      name: "jobTemplate"
-      widget: "object"
-      fields:
+      - {label: "APIVersion", name: "apiVersion", widget: "hidden", default: "batch/v1beta1"}
+      - {label: "Kind", name: "kind", widget: "hidden", default: "CronJob"}
+      - label: "Metadata"
+        name: "metadata"
+        widget: "object"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
       - label: "Spec"
         name: "spec"
         widget: "object"
         fields:
-        - label: "Template"
-          name: "template"
-          widget: "object"
-          fields:
-          - label: "Spec"
-            name: "spec"
+          - {label: "Schedule", name: "schedule", widget: "string"}
+          - label: "JobTemplate"
+            name: "jobTemplate"
             widget: "object"
             fields:
-            - label: "Containers"
-              name: "containers"
-              widget: "list"
-              fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Image", name: "image", widget: "string"}
-              - label: "Args"
-                name: "args"
-                widget: "list"
-                field: {label: "Arg", name: "arg", widget: "string"}
+              - label: "Spec"
+                name: "spec"
+                widget: "object"
+                fields:
+                  - label: "Template"
+                    name: "template"
+                    widget: "object"
+                    fields:
+                      - label: "Spec"
+                        name: "spec"
+                        widget: "object"
+                        fields:
+                          - label: "Containers"
+                            name: "containers"
+                            widget: "list"
+                            fields:
+                              - {label: "Name", name: "name", widget: "hidden", default: "hello"}
+                              - {label: "Image", name: "image", widget: "hidden", default: "docker/whalesay:latest"}
+                              - label: "Args"
+                                name: "args"
+                                widget: "list"
+                                field: {label: "Arg", name: "arg", widget: "string"}
+                          - {label: "RestartPolicy", name: "restartPolicy", widget: "hidden", default: "Never"}
