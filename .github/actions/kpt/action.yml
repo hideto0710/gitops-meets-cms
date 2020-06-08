@@ -1,0 +1,15 @@
+name: 'kpt'
+description: 'kpt'
+inputs:
+  src:
+    description: 'source dir'
+    required: true
+  dest:
+    description: 'destination dir'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.src }}
+    - ${{ inputs.dest }}

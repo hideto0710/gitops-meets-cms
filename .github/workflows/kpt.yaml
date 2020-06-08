@@ -1,0 +1,16 @@
+name: 'kpt'
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'simple-jobs/**.yaml'
+jobs:
+  kpt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: ./.github/actions/kpt
+        with:
+          src: ./simple-jobs
+          dest: ./out
