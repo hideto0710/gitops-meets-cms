@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'simple-jobs/**.yaml'
+    #paths:
+    #  - 'simple-jobs/**.yaml'
 jobs:
   kpt:
     runs-on: ubuntu-latest
