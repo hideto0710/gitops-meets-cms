@@ -53,4 +53,3 @@ collections:
                 name: "args"
                 widget: "list"
                 field: {label: "Arg", name: "arg", widget: "string"}
-              - {label: "RestartPolicy", name: "restartPolicy", widget: "string"}
