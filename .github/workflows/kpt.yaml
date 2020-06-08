@@ -9,8 +9,16 @@ jobs:
   kpt:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+      - name: Remove dir
+        run: rm -rf cron-jobs
       - uses: ./.github/actions/kpt
         with:
           src: ./simple-jobs
-          dest: ./out
+          dest: ./cron-jobs
+      - name: Commit CronJobs
+        run: |
+          git config --global user.name 'hideto0710'
+          git config --global user.email 'h.inamura0710@gmail.com'
+          git commit -am "update cron-jobs"
+          git push
