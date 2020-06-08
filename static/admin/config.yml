@@ -54,3 +54,24 @@ collections:
                                 widget: "list"
                                 field: {label: "Arg", name: "arg", widget: "string"}
                           - {label: "RestartPolicy", name: "restartPolicy", widget: "hidden", default: "Never"}
+
+  - name: "simplejobs"
+    label: "SimpleJobs"
+    folder: "simple-jobs"
+    create: true
+    identifier_field: "metadata.name"
+    extension: "yaml"
+    fields:
+      - {label: "APIVersion", name: "apiVersion", widget: "hidden", default: "batch.hideto0710.github.com/v1"}
+      - {label: "Kind", name: "kind", widget: "hidden", default: "SimpleJob"}
+      - label: "Metadata"
+        name: "metadata"
+        widget: "object"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+      - label: "Spec"
+        name: "spec"
+        widget: "object"
+        fields:
+          - {label: "Schedule", name: "schedule", widget: "string"}
+          - {label: "Name", name: "name", widget: "string"}
