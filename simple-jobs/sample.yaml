@@ -1,7 +1,0 @@
-apiVersion: batch.hideto0710.github.com/v1
-kind: SimpleJob
-metadata:
-  name: sample
-spec:
-  schedule: "*/30 * * * *"
-  name: hideto0710
