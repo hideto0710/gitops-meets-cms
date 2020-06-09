@@ -1,0 +1,7 @@
+apiVersion: batch.hideto0710.github.com/v1
+kind: SimpleJob
+metadata:
+  name: example-3
+spec:
+  schedule: "*/2 * * * *"
+  name: hacci
