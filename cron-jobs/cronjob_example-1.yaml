@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: example-1
+spec:
+  schedule: '*/1 * * * *'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: 'docker/whalesay:latest'
+            command:
+            - cowsay
+            args:
+            - hello
+            - hacci
+          restartPolicy: Never
